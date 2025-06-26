@@ -1,0 +1,69 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(120deg, #6a11cb 0%, #2575fc 100%);
+}
+
+.background {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Glassmorphism card */
+.glass-card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 40px;
+  color: white;
+  text-align: center;
+  max-width: 400px;
+}
+
+/* Balloon styling */
+.balloon {
+  position: absolute;
+  width: 40px;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.3);
+  border-radius: 50% 50% 45% 45%;
+  animation: float 10s linear infinite;
+  box-shadow: inset 0 0 10px rgba(255,255,255,0.3);
+}
+
+.balloon::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  width: 2px;
+  height: 20px;
+  background: white;
+  transform: translateX(-50%);
+}
+
+@keyframes float {
+  0% {
+    bottom: -100px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  100% {
+    bottom: 110%;
+    opacity: 0;
+  }
+}
